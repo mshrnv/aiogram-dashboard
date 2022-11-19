@@ -5,3 +5,7 @@ services:
     build: ./telegram-bot
   mongo:
     image: mongo
+  backend:
+    build: ./backend
+    ports:
+      - 8001:8000
