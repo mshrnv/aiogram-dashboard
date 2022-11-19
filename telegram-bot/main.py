@@ -4,6 +4,7 @@ import asyncio
 import logging
 from aiogram import Bot, Dispatcher, types
 from config import BOT_TOKEN
+import database
 
 # Enabling logging
 logging.basicConfig(level=logging.INFO)
@@ -22,7 +23,12 @@ async def cmd_start(message: types.Message):
     Args:
         message (Message): "/start" message
     """
-    await message.answer("Hello!)")
+
+    # Collecting user to database
+    user = dict(message.from_user)
+    database.insert_user(user)
+
+    await message.answer("Hello :)")
 
 
 async def main():
