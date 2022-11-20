@@ -1,4 +1,4 @@
-# Aiogram Admin Panel App
+# Aiogram Dashboard App
 
 ### Technology stack
 - Aiogram
