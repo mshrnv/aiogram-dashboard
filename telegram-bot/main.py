@@ -40,6 +40,7 @@ async def echo_message(message: types.Message):
         message (types.Message): New message
     """
 
+    # Collecting message to database
     message_dict = dict(message)
     database.insert_message(message_dict)
 

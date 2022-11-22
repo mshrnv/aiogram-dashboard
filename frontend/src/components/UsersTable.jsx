@@ -1,5 +1,4 @@
 import React from "react";
-import axios from 'axios';
 import UserService from "../API/UserService";
 import { useFetching } from "../hooks/useFetching";
 import { useState, useEffect } from "react";
@@ -16,8 +15,6 @@ const UsersTable = () => {
     useEffect(() => {
         fetchUsers()
     }, [])
-
-    // fetchUsers()
 
     return (
         <div className="container" style={{ marginTop: 15 }}>

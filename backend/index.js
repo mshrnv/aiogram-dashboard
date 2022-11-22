@@ -1,8 +1,10 @@
 const express = require('express')
 const mongoose = require('mongoose')
-var cors = require('cors');
 const usersRouter = require('./routes/users')
+const cors = require('cors');
 
+
+// Setup
 const port = 8000
 const app = express()
 app.use(cors())
