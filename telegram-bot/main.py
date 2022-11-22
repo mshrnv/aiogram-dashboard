@@ -6,6 +6,7 @@ from aiogram import Bot, Dispatcher, types
 from config import BOT_TOKEN
 import database
 
+
 # Enabling logging
 logging.basicConfig(level=logging.INFO)
 
@@ -29,6 +30,20 @@ async def cmd_start(message: types.Message):
     database.insert_user(user)
 
     await message.answer("Hello :)")
+
+
+@dp.message_handler()
+async def echo_message(message: types.Message):
+    """Echo
+
+    Args:
+        message (types.Message): New message
+    """
+
+    message_dict = dict(message)
+    database.insert_message(message_dict)
+
+    await message.answer(message.text)
 
 
 async def main():
