@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar";
 import UsersTable from "./components/UsersTable";
+import MessagesTable from "./components/MessagesTable";
 
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
         <div className="App">
             <Navbar />
             <UsersTable />
+            <MessagesTable />
         </div>
     );
 }
