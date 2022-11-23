@@ -1,6 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const usersRouter = require('./routes/users')
+const messagesRouter = require('./routes/messages')
 const cors = require('cors');
 
 
@@ -9,8 +10,9 @@ const port = 8000
 const app = express()
 app.use(cors())
 
-// Including users router
+// Including routers
 app.use(usersRouter)
+app.use(messagesRouter)
 
 // Connects to MongoDB and starts ther server
 const start = async () => {

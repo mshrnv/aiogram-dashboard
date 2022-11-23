@@ -30,8 +30,8 @@ const MessagesTable = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {messages.map(message => (
-                        <tr>
+                    {messages.map((message, index) => (
+                        <tr key={index}>
                             <th scope="row">{message.message_id}</th>
                             <td>{message.from.id}</td>
                             <td>{message.date}</td>

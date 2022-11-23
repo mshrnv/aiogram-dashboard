@@ -29,8 +29,8 @@ const UsersTable = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {users.map(user => (
-                        <tr>
+                    {users.map((user, index) => (
+                        <tr key={index}>
                             <th scope="row">{user.id}</th>
                             <td>{user.first_name}</td>
                             <td>{user.last_name}</td>
