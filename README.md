@@ -5,4 +5,3 @@
 - Express.js
 - React.js
 - Mongo DB
-- Docker
