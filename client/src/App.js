@@ -1,25 +1,15 @@
 import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import IndexPage from './pages/IndexPage';
-import UsersPage from './pages/UsersPage';
-import MessagesPage from './pages/MessagesPage';
+import { BrowserRouter as Router } from 'react-router-dom';
+import MyNavbar from './components/Navbar';
+import AppRouter from "./components/AppRouter";
 
 
 function App() {
     return (
-        <div className="App">
+        <div className="App bg-gray-800 text-white">
             <Router>
-                <header>
-                    <Navbar />
-                </header>
-                <main>
-                    <Routes>
-                        <Route path="/tables" element={<MessagesPage />} />
-                        <Route path="/stats" element={<UsersPage />} />
-                        <Route path="/" element={<IndexPage />} />
-                    </Routes>
-                </main>
+                <MyNavbar />
+                <AppRouter/>
             </Router>
         </div >
     );

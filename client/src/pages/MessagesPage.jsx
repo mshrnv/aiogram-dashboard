@@ -2,7 +2,9 @@ import React from "react";
 
 const MessagesPage = () => {
     return (
-        <h1>Сообщения</h1>
+        <div className="h-screen">
+            Сообщения
+        </div>
     )
 }
 

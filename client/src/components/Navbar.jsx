@@ -1,28 +1,39 @@
-import React from "react";
-import { Link } from 'react-router-dom';
+import React, {useState} from "react";
+import {Link} from 'react-router-dom';
+import {Navbar} from "flowbite-react";
+import logo from '../favicon.svg';
+import {routes} from '../routes/index'
 
-const Navbar = () => {
+const MyNavbar = () => {
+
+    const [currentPath, setCurrentPath] = useState(window.location.pathname)
+
     return (
-        <nav className="navbar navbar-expand-lg bg-light">
-            <div className="container-fluid">
-                <a className="navbar-brand">Aiogram Dashboard</a>
-
-
-                <ul className="navbar-nav">
-                    <li className="nav-item">
-                        <Link to="/"><a className="nav-link active">Главная</a></Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link to="/tables"><a className="nav-link">Таблицы</a></Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link to="/stats"><a className="nav-link">Статистика</a></Link>
-                    </li>
-                </ul>
-
-            </div>
-        </nav>
+        <Navbar fluid={true}>
+            <Navbar.Brand>
+                <img
+                    src={logo}
+                    className="mr-3 h-6 sm:h-9"
+                    alt="Aiogram Dashboard Logo"
+                />
+                <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
+                  Aiogram Dashboard
+                </span>
+            </Navbar.Brand>
+            <Navbar.Toggle />
+            <Navbar.Collapse>
+                {
+                    routes.map((route) => (
+                        <Navbar.Link active={currentPath === route.path} key={route.path}>
+                            <Link to={route.path} onClick={() => {setCurrentPath(route.path)}}>
+                                {route.name}
+                            </Link>
+                        </Navbar.Link>
+                    ))
+                }
+            </Navbar.Collapse>
+        </Navbar>
     )
 }
 
-export default Navbar;
+export default MyNavbar;

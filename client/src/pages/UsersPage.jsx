@@ -2,7 +2,9 @@ import React from "react";
 
 const UsersPage = () => {
     return (
-        <h1>Пользователи</h1>
+        <div className="h-screen">
+            Пользователи
+        </div>
     )
 }
 

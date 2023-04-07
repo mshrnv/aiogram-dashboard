@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, Routes} from "react-router-dom";
+import {Navigate, Route, Routes} from "react-router-dom";
 import {routes} from "../routes/index";
 
 const AppRouter = () => {
@@ -10,6 +10,7 @@ const AppRouter = () => {
                     <Route key={route.path} path={route.path} element={route.component} exact={route.exact}/>
                 ))
             }
+            <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
     );
 };
