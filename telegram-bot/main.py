@@ -3,15 +3,19 @@
 import asyncio
 import logging
 from aiogram import Bot, Dispatcher, types
-from config import BOT_TOKEN
 import database
+from dotenv import load_dotenv, find_dotenv
+from os import getenv
 
+
+# ENV settings
+load_dotenv(find_dotenv())
 
 # Enabling logging
 logging.basicConfig(level=logging.INFO)
 
 # Bot object
-bot = Bot(token=BOT_TOKEN)
+bot = Bot(token=getenv("BOT_TOKEN"))
 
 # Dispatcher
 dp = Dispatcher(bot)
